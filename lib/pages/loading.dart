@@ -28,9 +28,6 @@ class _LoadingScreenPageState extends State<LoadingScreenPage> {
     });
   }
 
-
-
-
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(

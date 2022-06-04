@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
 import 'package:rs_availibility/pages/home.dart';
 import 'package:rs_availibility/pages/mainpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'dart:convert' show json;
-import 'dart:async';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({ Key? key }) : super(key: key);
@@ -55,17 +52,10 @@ class _LoginPageState extends State<LoginPage> {
     newuser = (logindata.getBool('login') ?? true);
 
     if (!newuser) {
-      Navigator.pushReplacement(context, 
-      new MaterialPageRoute(builder: (context) =>
-      Home()));
+      Navigator.pushReplacement(context,
+          new MaterialPageRoute(builder: (context) =>
+              MainPage()));
     }
-    //newuser = (logindata.getBool('login') ?? true);
-    // print(newuser);
-
-    // if (newuser == false) {
-    // Navigator.pushReplacement(
-    // context, new MaterialPageRoute(builder: (context) => HomePage()));
-    // }
   }
 
   @override
@@ -161,18 +151,18 @@ class _LoginPageState extends State<LoginPage> {
             isLoginSuccess = true;
           });
           logindata.setBool('login', false);
-                logindata.setString('email', email);
+          logindata.setString('email', email);
+          _tampilkanalert();
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
+                  return MainPage();
+          }));
 
-                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context){
-                  return Home();
-                }));
-
-              } else {
+        } else {
                 setState(() {
                   text = "Login Failed";
                   isLoginSuccess = false;
                 });
-              }
+        }
               SnackBar snackBar = const SnackBar(
                 content: Text("Berhasil Masuk"),
               );

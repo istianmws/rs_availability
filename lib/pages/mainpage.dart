@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:rs_availibility/pages/home.dart';
 import 'package:rs_availibility/pages/saved.dart';
+import 'package:rs_availibility/pages/search.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -15,6 +16,7 @@ class _MainPageState extends State<MainPage> {
   List<Widget> pageList = <Widget>[
     Home(),
     Saved(),
+    Search(),
   ];
 
   @override
@@ -31,8 +33,8 @@ class _MainPageState extends State<MainPage> {
         type: BottomNavigationBarType.fixed,
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: "Home"),
-          //BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
-          BottomNavigationBarItem(icon: Icon(Icons.bookmark), label: "Saved News"),
+          BottomNavigationBarItem(icon: Icon(Icons.search), label: "Search"),
+          BottomNavigationBarItem(icon: Icon(Icons.bookmark), label: "Saved Room"),
         ],
       ),
     );
