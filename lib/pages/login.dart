@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:rs_availibility/pages/home.dart';
+import 'package:rs_availibility/pages/mainpage.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'dart:convert' show json;
 import 'dart:async';
@@ -35,7 +36,7 @@ class _LoginPageState extends State<LoginPage> {
       actions: [
         TextButton(
           child: const Text('Ok'),
-          onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Home())),
+          onPressed: () => Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => MainPage())),
         ),
       ],
     );

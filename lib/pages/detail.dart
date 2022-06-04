@@ -17,7 +17,7 @@ class DetailPage extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false, // set it to false
       appBar: AppBar( backgroundColor: Colors.white,
-        title: const Center(child:Text("Detail", style: TextStyle(color: Colors.black),),),
+        title: const Center(child:Text("Detail Kamar", style: TextStyle(color: Colors.black),),),
         automaticallyImplyLeading: false,
       ),
       body: Column(
